@@ -421,7 +421,7 @@
                 veteranBarChart3
                     .width(600)
                     .height(320)
-                    .margins({ top: 35, right: 90, bottom: 30, left: 20 })
+                    .margins({ top: 35, right: 90, bottom: 30, left: 60 })
                     .legend(dc.legend().x(400).y(0).itemHeight(13).gap(5))
                     .dimension(dateDim)
                     .group(numVeteranEmployedByDate, "Veteran In Labor Force: Employed")
