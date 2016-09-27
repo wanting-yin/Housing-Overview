@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="keen-dashboards.css">
+  <link rel="stylesheet" href="dc.css">
+  <link rel="stylesheet" href="custom.css">
+    <!-- Load c3.css -->
+    <link href="c3.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap.min.js"></script>
+    <script type="text/javascript" src="crossfilter.js"></script>
+    <script type="text/javascript" src="d3.js" charset="utf-8"></script>
+    <script type="text/javascript" src="dc.js"></script>
+    <script type="text/javascript" src="queue.js"></script>
+
+
+    <!-- Load d3.js and c3.js -->
+    <script src="c3.min.js"></script>
+
+    <script src="keen.min.js"></script>
+    <script src='graphs.js' type='text/javascript'></script>
+</head>
+<body class="application">
+
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="./">Housing Overview - County Level</a>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+
+    <div class="row">
+
+        <!-- fips Pie -->
+        <div class="col-sm-4">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    FIPS
+                </div>
+                <div class="chart-stage">
+                    <div id="fips-row-chart"></div>
+                </div>
+            </div>
+        </div>
+        <!-- fips Pie -->
+        <div class="col-sm-8">
+            <div class="chart-wrapper">
+                <p><b><font size="4">1. Industry by Occupation</font></b></p>
+                <p>
+                    The chart below shows the civilian employed population with 16 years and over in  industry by occupation.
+                    <br /><br />
+                    <font size="2">Data available in 2010,2011,2012,2013 and 2014</font>
+                </p>
+            </div>
+        </div>
+        <!-- Time Chart -->
+        <div class="col-sm-8">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Industry by Occupation
+                </div>
+                <div class="chart-stage">
+                    <div id="time-chart5"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Time Chart -->
+
+        <div class="col-sm-6">
+            <div class="chart-wrapper">
+                <p><b><font size="4">2. Total Population and Type of Residence</font></b></p>
+                <p>
+                    The chart below shows the total population, which consists of the population living in households and group quarters. The household population lives in private housing units while people in group quarters live in group living facilities such as correctional institutions, juvenile facilities, skilled nursing facilities, college residence halls, military barracks, group homes, and workers’ dormitories.
+                    <br /><br />  
+                    <font size="2">Data available in 2000,2010,2011,2012,2013 and 2014</font>
+                </p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="chart-wrapper">
+                <p><b><font size="4">3. Total Household and Type of Household</font></b></p>
+                <p>
+                    A household consists of all people who occupy a housing unit regardless of relationship. A household may consist of a person living alone or multiple unrelated individuals or families living together. The chart below shows the total number of households over time, including both family and nonfamily households. A family consists of two or more people (one of whom is the householder) related by birth, marriage, or adoption residing in the same housing unit. 
+                    <br /><br />
+                    <font size="2">Data available in 2000,2010,2011,2012,2013 and 2014</font>
+                </p>
+            </div>
+        </div>
+        <!-- Time Chart -->
+        <div class="col-sm-6">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Population and type of residence
+                </div>
+                <div class="chart-stage">
+                    <div id="time-chart2"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Time Chart -->
+            <!-- Time Chart -->
+        <div class="col-sm-6">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Household and type of hoursehold
+                </div>
+                <div class="chart-stage">
+                    <div id="household-chart2"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Time Chart -->
+
+        <div class="col-sm-6">
+            <div class="chart-wrapper">
+                <p><b><font size="4">4. Population by Veteran Status </font></b></p>
+                <p>
+                    The chart below shows the total civilian population from 18 to 64 years by veteran status.
+                    <br /><br />
+                    <font size="2">Data available in 2010,2011,2012,2013 and 2014</font>
+                </p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="chart-wrapper">
+                <p><b><font size="4">5. Veteran Population by Labor Force Status</font></b></p>
+                <p>
+                    The chart below shows the total veteran population from 18 to 64 years by labor force status.
+                    <br /><br />
+                    <font size="2">Data available in 2010,2011,2012,2013 and 2014</font>
+                </p>
+            </div>
+        </div>
+        <!-- Time Chart -->
+        <div class="col-sm-6">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Population by Veteran Status
+                </div>
+                <div class="chart-stage">
+                    <div id="veteran-bar-chart2"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Time Chart -->
+        
+        <div class="col-sm-6">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Veteran Population by Labor Force Status
+                </div>
+                <div class="chart-stage">
+                    <div id="veteran-bar-chart"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="chart-wrapper">
+                <p><b><font size="4">6. Veteran Population by Employment Status </font></b></p>
+                <p>
+                    The chart below shows the total veteran in labor force by employment status.
+                    <br /><br />
+                    <font size="2">Data available in 2010,2011,2012,2013 and 2014</font>
+                </p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="chart-wrapper">
+                <p><b><font size="4">7. Veteran Population by Employment Status</font></b></p>
+                <p>
+                    The chart below shows the total veteran in labor force by employment status.
+                    <br /><br />
+                    <font size="2">Data available in 2010,2011,2012,2013 and 2014</font>
+                </p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Veteran Population by Labor Force Status
+                </div>
+                <div class="chart-stage">
+                    <div id="veteran-bar-chart3"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Veteran Status by Employment Status for the Civilian Population
+                </div>
+                <div class="chart-stage">
+                    <div id="veteran-chart"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="chart-wrapper">
+                <p><b><font size="4">8. Crime – Uniform Crime Reporting Program Data  </font></b></p>
+                <p>
+                    The chart below shows the total property and violent crimes
+                    <br /><br />
+                    <font size="2">Data available in 2010,2011,2012,2013 and 2014</font>
+                </p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="chart-wrapper">
+                <p><b><font size="4">9. To be continued...</font></b></p>
+                <p>
+                    The chart below shows 
+                    <br /><br />
+                    <font size="2">Data available in </font>
+                </p>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Veteran Status by Employment Status for the Civilian Population
+                </div>
+                <div class="chart-stage">
+                    <div id="crime-bar-chart"></div>
+                </div>
+            </div>
+        </div>
+ </div>
+</div>
+    <hr>
+    <p class="small text-muted">Built by Wanting Yin</p>
+      <p class="small text-muted"><b>Data Source: </b>Minnesota Population Center. National Historical Geographic Information System: Version 2.0. Minneapolis, MN: University of Minnesota 2011.</p>
+
+
+
+</body>
+</html>
